@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1774009061942559283.html"
 	],
 	prefix: "",
 	theme: {
@@ -18,7 +19,24 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'display': ['Cormorant Garamond', 'serif'],
+				'body': ['Montserrat', 'sans-serif'],
+			},
 			colors: {
+				gold: {
+					DEFAULT: '#C9A84C',
+					light: '#E8C96A',
+					dark: '#8B6914',
+					pale: '#F5E6B8',
+				},
+				dark: {
+					DEFAULT: '#080808',
+					100: '#111111',
+					200: '#1A1A1A',
+					300: '#252525',
+					400: '#333333',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -69,6 +87,18 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
+				'fade-in-up': {
+					from: { opacity: '0', transform: 'translateY(40px)' },
+					to: { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-in': {
+					from: { opacity: '0' },
+					to: { opacity: '1' }
+				},
+				'gold-shimmer': {
+					'0%, 100%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+				},
 				'accordion-down': {
 					from: {
 						height: '0'
@@ -88,7 +118,10 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+				'fade-in': 'fade-in 1s ease-out forwards',
+				'gold-shimmer': 'gold-shimmer 3s ease infinite',
 			}
 		}
 	},
